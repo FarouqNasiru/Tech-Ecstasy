@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Cart</title>
+    <link rel="stylesheet" href="css/style1.css">
+    <script defer src="app.js"></script>
+</head>
+<body>
+
+    <div class="cart-container">
+        <h2>My TchEcstacy Cart</h2>
+        <div class="cart-summary">
+            <p>1 total item(s) in cart.</p>
+            <h3>₦117,530.00</h3>
+            <p>total value</p>
+            <button class="installment-btn">Start your installments</button>
+        </div>
+
+        <div class="cart-item">
+            <img src="images/Apple-iPhone-12-Transparent-Images-PNG.png" alt="Infinix Smart 8">
+            <div class="cart-item-info">
+                <h3>Infinix Smart 8 6.6"</h3>
+                <p>64GB + 2GB 5000mAh</p>
+                <h4>₦117,530.00</h4>
+            </div>
+            <div class="quantity-control">
+                <button onclick="decreaseQuantity()">-</button>
+                <span id="quantity">1</span>
+                <button onclick="increaseQuantity()">+</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="bottom-nav">
+        <div class="nav-item"><a href="shop.html">
+                <span class="nav-icon" style="font-size: 13px; display: block;">🛍️</span>
+                <span>Shop</span></a>
+        </div>
+        <div class="nav-item"><a href="cart.html">
+                <span class="nav-icon" style="font-size: 13px; display: block;">🛒</span>
+                <span>Cart</span></a>
+        </div>
+        <div class="nav-item"><a href=""></a>
+            <span class="nav-icon" style="font-size: 13px; display: block;">📜</span>
+            <span>History</span></a>
+        </div>
+        <div class="nav-item"><a href=""></a>
+            <span class="nav-icon" style="font-size: 13px; display: block;">❤️</span>
+            <span>Wishlist</span></a>
+        </div>
+        <div class="nav-item"><a href=""></a>
+            <span class="nav-icon" style="font-size: 13px; display: block;">👤</span>
+            <span>Account</span></a>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My TechEcstasy Payments</title>
+    <link rel="stylesheet" href="css/style1.css">
+</head>
+<body>
+
+    <div class="payments-container">
+        <h2>My TechEcstasy Payments</h2>
+
+        <div class="tab-menu">
+            <span class="tab active" onclick="switchTab('in-progress')">In Progress</span>
+            <span class="tab" onclick="switchTab('completed')">Completed</span>
+            <span class="tab" onclick="switchTab('cancelled')">Cancelled</span>
+        </div>
+
+        <div class="payment-content">
+            <p class="empty-message">You have no ongoing Installments</p>
+        </div>
+    </div>
+
+    <div class="bottom-nav">
+        <div class="nav-item"><a href="">
+                <span class="nav-icon" style="font-size: 13px; display: block;">🛍️</span>
+                <span>Shop</span></a>
+        </div>
+        <div class="nav-item"><a href="cart.html">
+                <span class="nav-icon" style="font-size: 13px; display: block;">🛒</span>
+                <span>Cart</span></a>
+        </div>
+        <div class="nav-item"><a href=""></a>
+            <span class="nav-icon" style="font-size: 13px; display: block;">📜</span>
+            <span>History</span></a>
+        </div>
+        <div class="nav-item"><a href=""></a>
+            <span class="nav-icon" style="font-size: 13px; display: block;">❤️</span>
+            <span>Wishlist</span></a>
+        </div>
+        <div class="nav-item"><a href=""></a>
+            <span class="nav-icon" style="font-size: 13px; display: block;">👤</span>
+            <span>Account</span></a>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
