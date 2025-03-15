@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Owner Dashboard</title>
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Firebase SDK -->
+  <script type="module" src="owner-dashboard.js"></script>
+  <script type="module" src="script.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Owner Dashboard</h1>
+    <div id="auth-section">
+      <img id="profile-picture" src="" alt="Profile Picture" class="hidden">
+      <button id="logout-button">Logout</button>
+    </div>
+  </header>
+
+  <section id="add-product-form">
+    <h2>Add New Product</h2>
+    <form id="product-form">
+      <input type="text" id="product-name" placeholder="Product Name" required>
+      <input type="number" id="product-price" placeholder="Price" required>
+      <input type="text" id="main-image" placeholder="Main Image URL" required>
+      <input type="file" id="additional-images" placeholder="Additional Images" multiple>
+      <textarea id="product-description" placeholder="Description" required></textarea>
+      <button type="submit">Add Product</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2023 Online Store. All rights reserved.</p>
+  </footer>
+</body>
+</html>

@@ -5,7 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product Details</title>
     <link rel="stylesheet" href="css/style1.css">
-    <script defer src="app.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Swiper JS for Image Slider -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <!-- Firebase SDK -->
+  <script type="module" src="product.js"></script>
 </head>
 <body>
     <div class="product-page">
@@ -13,63 +18,9 @@
     
        
     
-        <div class="product-details">
-            <div class="image-slider">
-                <button class="prev" onclick="prevSlide()">&#10094;</button>
-                <div class="slider-images">
-                    <img src="images/Apple-iPhone-12-PNG-Picture.png" class="active">
-                    <img src="images/Apple-iPhone-12-Transparent-Images-PNG.png">
-                    <img src="images/Mobile-Phone-Download-PNG-Image.png">
-                </div>
-                <button class="next" onclick="nextSlide()">&#10095;</button>
-            </div>
-            
-            
-            
-            <div class="product-header">
-                <div class="seller-container">
-                    <div class="seller-info">
-                        <span class="seller-name">CDcare</span>
-                        <span class="info-icon">i</span>
-                    </div>
-                    <span class="category">Washing Machines</span>
-                </div>
-            
-                <div class="product-icons">
-                    <span class="cart-icon">🛒</span>
-                    <span class="love-icon">❤️</span>
-                    <span class="share-icon">🔗</span>
-                </div>
-            </div>
-            
-            
-            
-           
-           
-            <h2>Polystar 4.5KG Top Loader Washing Machine</h2>
-
-           
-
-            <div class="product-info">
-                <p class="price">₦98,860.00</p>
-                <button class="buy-button">Buy Now, Once!</button>
-                <p class="payment-info">Select payment frequency to pay small small.</p>
-                <div class="payment-options">
-                    <button>Weekly</button>
-                    <button>Monthly</button>
-                </div>
-            </div>
-        </div>
-    
-        <div class="product-description">
-            <h3>More product description</h3>
-            <p>- Mechanical control water level</p>
-            <p>- Economical</p>
-            <p>- Magic washing</p>
-            <p>- Plastic body</p>
-            <p>- Anti-rust</p>
-        </div>
-    </div>
+        <section id="product-details">
+            <!-- Product details will be dynamically inserted here -->
+          </section>
     
 
     <div class="bottom-nav">

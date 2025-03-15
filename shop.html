@@ -20,7 +20,9 @@
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css"
         media="screen">
-    <script defer src="app.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <script type="module" src="script.js"></script>
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
@@ -42,6 +44,12 @@
                             </div>
                         </div>
                     </div>
+
+
+                    
+                    
+
+
                     <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9">
                         <nav class="navigation navbar navbar-expand-md navbar-dark ">
                             <button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -51,6 +59,11 @@
                             </button>
                             <div class="collapse navbar-collapse" id="navbarsExample04">
                                 <ul class="navbar-nav mr-auto">
+                                    <div id="auth-section">
+                                        <img id="profile-picture" src="" alt="Profile Picture" class="hidden">
+                                       
+                                       
+                                      </div>
                                     <li class="nav-item ">
                                         <a class="nav-link" href="index.html">Home</a>
                                     </li>
@@ -125,20 +138,64 @@
 
         <div class="categories">
             <div class="category" style="background-image: url('images/pxfuel.jpg');">
-                <span>Essentials</span>
+                <span>BRAND NEW PHONES</span>
             </div>
             <div class="category" style="background-image: url('images/tech-accessories.webp');">
-                <span>Bicycles</span>
+                <span>UK USED PHONES</span>
             </div>
             <div class="category" style="background-image: url('images/pxfuel.jpg');">
-                <span>Cameras</span>
+                <span>BRAND NEW LAPTOPS</span>
             </div>
             <div class="category" style="background-image: url('images/Apple-iPhone-12-Transparent-Images-PNG.png');">
-                <span>Cars</span>
+                <span>UK USED LAPTOPS</span>
             </div>
             <div class="category" style="background-image: url('images/pexels.jpg');">
-                <span>Cooker</span>
+                <span>⁠AIRPODS</span>
             </div>
+            <div class="category" style="background-image: url('images/pxfuel.jpg');">
+                <span>KIDS TABLET</span>
+            </div>
+            <div class="category" style="background-image: url('images/tech-accessories.webp');">
+                <span>iPADS</span>
+            </div>
+            <div class="category" style="background-image: url('images/pxfuel.jpg');">
+                <span>SPECIAL OFFER GADGETS</span>
+            </div>
+            <div class="category" style="background-image: url('images/Apple-iPhone-12-Transparent-Images-PNG.png');">
+                <span>⁠LAPTOP ACCESSORIES</span>
+            </div>
+            <div class="category" style="background-image: url('images/pexels.jpg');">
+                <span>SPEAKERS</span>
+            </div>
+            <div class="category" style="background-image: url('images/pxfuel.jpg');">
+                <span>GAMES</span>
+            </div>
+            <div class="category" style="background-image: url('images/tech-accessories.webp');">
+                <span>LAPTOP REPAIR ACCESSORIES</span>
+            </div>
+            <div class="category" style="background-image: url('images/pxfuel.jpg');">
+                <span>iWATCH</span>
+            </div>
+            <div class="category" style="background-image: url('images/Apple-iPhone-12-Transparent-Images-PNG.png');">
+                <span>⁠INTERNET DEVICES</span>
+            </div>
+            <div class="category" style="background-image: url('images/pexels.jpg');">
+                <span>PHONE ACCESSORIES</span>
+            </div>
+            <div class="category" style="background-image: url('images/pxfuel.jpg');">
+                <span>MONITORS</span>
+            </div>
+            <div class="category" style="background-image: url('images/tech-accessories.webp');">
+                <span>PRINTERS</span>
+            </div>
+            <div class="category" style="background-image: url('images/pxfuel.jpg');">
+                <span>POINT OF SALES (POS)
+                </span>
+            </div>
+            <div class="category" style="background-image: url('images/Apple-iPhone-12-Transparent-Images-PNG.png');">
+                <span>TECH ACCESSORIES</span>
+            </div>
+            
         </div>
 
         <div class="products-header">
@@ -146,57 +203,12 @@
             <span class="see-all">See all</span>
         </div>
 
-        <div class="products">
-            <div class="product">
-                <a href="product.html"> <img src="images/Apple-iPhone-12-PNG-Picture.png"
-                        alt="Polystar Washing Machine"></a>
-                <p>Polystar 4.5KG Top Loader</p>
-                <div class="product-footer">
-                    <p class="price">$120</p>
-                    <span class="love-icon">❤️</span>
-                </div>
-            </div>
-            <div class="product"><a href="product.html">
-                <img src="images/Apple-iPhone-12-PNG-Picture.png" alt="JBL Earbuds"></a>
-                <p>JBL Wave 200TWS</p>
-                <div class="product-footer">
-                    <p class="price">$80</p>
-                    <span class="love-icon">❤️</span>
-                </div>
-            </div>
-            <div class="product"><a href="product.html">
-                <img src="images/Apple-iPhone-12-PNG-Picture.png" alt="Bicycle"></a>
-                <p>Mountain Bicycle</p>
-                <div class="product-footer">
-                    <p class="price">$250</p>
-                    <span class="love-icon">❤️</span>
-                </div>
-            </div>
-            <div class="product"><a href="product.html">
-                <img src="images/Apple-iPhone-12-PNG-Picture.png" alt="Camera"></a>
-                <p>Canon DSLR Camera</p>
-                <div class="product-footer">
-                    <p class="price">$600</p>
-                    <span class="love-icon">❤️</span>
-                </div>
-            </div>
-            <div class="product"><a href="product.html">
-                <img src="images/Apple-iPhone-12-PNG-Picture.png" alt="Car"></a>
-                <p>Toyota Corolla 2022</p>
-                <div class="product-footer">
-                    <p class="price">$20,000</p>
-                    <span class="love-icon">❤️</span>
-                </div>
-            </div>
-            <div class="product"><a href="product.html">
-                <img src="images/Apple-iPhone-12-PNG-Picture.png" alt="Cooker"></a>
-                <p>Gas Cooker</p>
-                <div class="product-footer">
-                    <p class="price">$150</p>
-                    <span class="love-icon">❤️</span>
-                </div>
-            </div>
-        </div>
+        
+            <section id="products-grid">
+                <!-- Products will be dynamically inserted here -->
+              </section>
+         
+        
     </div>
 
     <div class="bottom-nav">
@@ -212,7 +224,7 @@
             <span class="nav-icon" style="font-size: 13px; display: block;">📜</span>
             <span>History</span></a>
         </div>
-        <div class="nav-item"><a href="wishlist.html">
+        <div class="nav-item"><a href="wishlist.html" id="wishlist-icon">
             <span class="nav-icon" style="font-size: 13px; display: block;">❤️</span>
             <span>Wishlist</span></a>
         </div>
