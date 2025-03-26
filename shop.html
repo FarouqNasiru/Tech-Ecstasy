@@ -6,10 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shop - ABC Online Store</title>
     <link rel="stylesheet" href="css/style.css">
-    <script defer src="app.js"></script>
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <!-- style css -->
-    <link rel="stylesheet" href="css/style.css">
     <!-- Responsive-->
     <link rel="stylesheet" href="css/responsive.css">
     <!-- fevicon -->
@@ -20,8 +17,10 @@
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css"
         media="screen">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/compressorjs/1.2.1/compressor.min.js"></script>
     <script type="module" src="script.js"></script>
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -46,8 +45,8 @@
                     </div>
 
 
-                    
-                    
+
+
 
 
                     <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9">
@@ -61,9 +60,9 @@
                                 <ul class="navbar-nav mr-auto">
                                     <div id="auth-section">
                                         <img id="profile-picture" src="" alt="Profile Picture" class="hidden">
-                                       
-                                       
-                                      </div>
+
+
+                                    </div>
                                     <li class="nav-item ">
                                         <a class="nav-link" href="index.html">Home</a>
                                     </li>
@@ -101,38 +100,87 @@
 
 
 
-
+    <div class="search-bar">
+        <input type="text" id="search-input" placeholder="Search for anything...">
+    </div>
 
 
 
     <div class="container">
-        <div class="search-bar">
-            <input type="text" placeholder="Search for anything...">
-        </div>
+       
 
         <div class="sections">
             <button class="section-button">Sections</button>
-            <span class="filter" onclick="toggleFilterMenu()">Filter</span>
+            <!-- Remove onclick from the HTML -->
+            <span class="filter" id="filterButton">Filter</span>
         </div>
 
 
 
 
+        <!-- Slide-out filter menu -->
         <div class="filter-menu" id="filterMenu">
             <span class="close-btn" onclick="toggleFilterMenu()">&times;</span>
-            <h3>Filter by</h3>
+            <h3>Filter by Category</h3>
             <label>
-                <input type="checkbox"> Category
+                <input type="checkbox" value="BRAND NEW PHONES"> BRAND NEW PHONES
             </label>
             <label>
-                <input type="checkbox"> Price
+                <input type="checkbox" value="UK USED PHONES"> UK USED PHONES
             </label>
             <label>
-                <input type="checkbox"> Brand
+                <input type="checkbox" value="BRAND NEW LAPTOPS"> BRAND NEW LAPTOPS
             </label>
-
+            <label>
+                <input type="checkbox" value="UK USED LAPTOPS"> UK USED LAPTOPS
+            </label>
+            <label>
+                <input type="checkbox" value="AIRPODS"> AIRPODS
+            </label>
+            <label>
+                <input type="checkbox" value="KIDS TABLET"> KIDS TABLET
+            </label>
+            <label>
+                <input type="checkbox" value="iPADS"> iPADS
+            </label>
+            <label>
+                <input type="checkbox" value="SPECIAL OFFER GADGETS"> SPECIAL OFFER GADGETS
+            </label>
+            <label>
+                <input type="checkbox" value="LAPTOP ACCESSORIES"> LAPTOP ACCESSORIES
+            </label>
+            <label>
+                <input type="checkbox" value="SPEAKERS"> SPEAKERS
+            </label>
+            <label>
+                <input type="checkbox" value="GAMES"> GAMES
+            </label>
+            <label>
+                <input type="checkbox" value="LAPTOP REPAIR ACCESSORIES"> LAPTOP REPAIR ACCESSORIES
+            </label>
+            <label>
+                <input type="checkbox" value="iWATCH"> iWATCH
+            </label>
+            <label>
+                <input type="checkbox" value="INTERNET DEVICES"> INTERNET DEVICES
+            </label>
+            <label>
+                <input type="checkbox" value="PHONE ACCESSORIES"> PHONE ACCESSORIES
+            </label>
+            <label>
+                <input type="checkbox" value="MONITORS"> MONITORS
+            </label>
+            <label>
+                <input type="checkbox" value="PRINTERS"> PRINTERS
+            </label>
+            <label>
+                <input type="checkbox" value="POINT OF SALES (POS)"> POINT OF SALES (POS)
+            </label>
+            <label>
+                <input type="checkbox" value="TECH ACCESSORIES"> TECH ACCESSORIES
+            </label>
+            <button onclick="applyFilters()">Apply Filters</button>
         </div>
-
 
 
 
@@ -195,42 +243,42 @@
             <div class="category" style="background-image: url('images/Apple-iPhone-12-Transparent-Images-PNG.png');">
                 <span>TECH ACCESSORIES</span>
             </div>
-            
+
         </div>
 
         <div class="products-header">
-            <button class="section-button">All Products</button>
+            <button class="section-button">Our Products</button>
             <span class="see-all">See all</span>
         </div>
 
-        
-            <section id="products-grid">
-                <!-- Products will be dynamically inserted here -->
-              </section>
-         
-        
+
+        <section id="products-grid">
+            <!-- Products will be dynamically inserted here -->
+        </section>
+
+
     </div>
 
     <div class="bottom-nav">
-        <div class="nav-item"><a href="shop.html">
+        <div class="nav-item"><a class="hell0" href="shop.html">
                 <span class="nav-icon" style="font-size: 13px; display: block;">🛍️</span>
                 <span>Shop</span></a>
         </div>
-        <div class="nav-item"><a href="cart.html">
+        <div class="nav-item"><a class="hell0" href="cart.html">
                 <span class="nav-icon" style="font-size: 13px; display: block;">🛒</span>
                 <span>Cart</span></a>
         </div>
-        <div class="nav-item"><a href="payments.html">
-            <span class="nav-icon" style="font-size: 13px; display: block;">📜</span>
-            <span>History</span></a>
+        <div class="nav-item"><a class="hell0" href="payments.html">
+                <span class="nav-icon" style="font-size: 13px; display: block;">📜</span>
+                <span>History</span></a>
         </div>
-        <div class="nav-item"><a href="wishlist.html" id="wishlist-icon">
-            <span class="nav-icon" style="font-size: 13px; display: block;">❤️</span>
-            <span>Wishlist</span></a>
+        <div class="nav-item"><a class="hell0" href="wishlist.html" id="wishlist-icon">
+                <span class="nav-icon" style="font-size: 13px; display: block;">❤️</span>
+                <span>Wishlist</span></a>
         </div>
-        <div class="nav-item"><a href="account.html">
-            <span class="nav-icon" style="font-size: 13px; display: block;">👤</span>
-            <span>Account</span></a>
+        <div class="nav-item"><a class="hell0" href="account.html">
+                <span class="nav-icon" style="font-size: 13px; display: block;">👤</span>
+                <span>Account</span></a>
         </div>
     </div>
 
@@ -252,6 +300,8 @@
     <!-- sidebar -->
     <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
     <script src="js/custom.js"></script>
+    <script type="module" src="script.js"></script>
 </body>
 
 </html>
+

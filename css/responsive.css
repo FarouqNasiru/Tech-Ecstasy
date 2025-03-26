@@ -227,7 +227,7 @@
         position: absolute;
         width: 100%;
         margin-right: 20px;
-        z-index: 999;
+        z-index: 1000;
     }
     .navigation.navbar-dark .navbar-nav .nav-link {
         padding: 10px 0;

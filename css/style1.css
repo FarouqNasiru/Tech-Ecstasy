@@ -1,4 +1,4 @@
-
+@import url(css/swiper.min.css);
 * {
     box-sizing: border-box !important;
 }
@@ -215,7 +215,7 @@ button {
 .price {
     font-size: 20px;
     font-weight: bold;
-    color: #ff6600;
+    color: #007bff;
     text-align: left; /* Ensures it stays aligned to the left */
 }
 
@@ -712,7 +712,7 @@ h2 {
 }
 
 .nav-item.active {
-    color: #ff6600;
+    color: #007bff;
 }
 
 .nav-icon {
@@ -728,12 +728,12 @@ h2 {
 }
 
 h2 {
-    color: #ff6600;
+    color: #007bff;
 }
 
 .wishlist-count {
     font-size: 18px;
-    color: red;
+    color: #007bff;
 }
 
 .wishlist-item {
@@ -777,7 +777,7 @@ h2 {
 }
 
 .share-wishlist button {
-    background-color: #ff6600;
+    background-color: #007bff;
     color: white;
     font-size: 18px;
     border: none;
@@ -895,12 +895,61 @@ footer {
   }
   
   .cart-item {
-    background: #fff;
-    border: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+  }
+  
+  .cart-item-image {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    background-color: #f5f5f5;
     border-radius: 8px;
-    padding: 1rem;
-    margin-bottom: 1rem;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .cart-item-details {
+    flex: 1;
+  }
+  
+  .remove-button {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .remove-button:hover {
+    background-color: #ff1a1a;
+  }
+  
+  .cart-total {
+    margin-top: 20px;
+    font-size: 1.2em;
+  }
+  
+  .cart-actions {
+    margin-top: 20px;
+    text-align: right;
+  }
+  
+  #checkout-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+  }
+  
+  #checkout-button:hover {
+    background-color: #45a049;
   }
   
   .cart-item h3 {
@@ -932,8 +981,102 @@ footer {
     background: #0056b3;
   }
   
+
+
+
+
+/* Product Icons */
+.product-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Space between icons */
+    margin: 20px 0;
+}
+
+.product-icons i {
+    font-size: 24px;
+    cursor: pointer;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.product-icons i:hover {
+    color: #007bff; /* Change color on hover */
+}
+
+/* Add to Cart Button */
+.add-to-cart-button {
+    width: 90%;
+    margin: 20px auto; /* Center the button */
+    display: block;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-to-cart-button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+
+
+
+
+/* CDcare, Category, and Icons Container */
+.cdcare-icons-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0; /* Adjust margin as needed */
+}
+
+/* CDcare and Category */
+.cdcare-category {
+    display: flex;
+    flex-direction: column;
+    gap: 5px; /* Space between CDcare and category */
+}
+
+.cdcare-text {
+    font-size: 16px; /* Adjust font size as needed */
+    font-weight: bold;
+    color: #333;
+}
+
+.product-category {
+    font-size: 14px; /* Smaller font size for category */
+    color: #666;
+}
+
+/* Product Icons */
+.product-icons {
+    display: flex;
+    gap: 15px; /* Space between icons */
+}
+
+.product-icons i {
+    font-size: 20px; /* Adjust icon size as needed */
+    color: #333;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.product-icons i:hover {
+    color: #007bff; /* Change color on hover */
+}
+
+
+
+
+
+
   #add-to-cart {
-    background: #28a745;
+    background: #007bff;
     color: #fff;
     border: none;
     padding: 0.75rem 1.5rem;
@@ -946,3 +1089,68 @@ footer {
   #add-to-cart:hover {
     background: #218838;
   }
+
+
+ /* Swiper container */
+.swiper-container {
+    width: 100%;
+    height: auto; /* Adjust height as needed */
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 20px; /* Add some spacing below the slider */
+}
+
+/* Swiper slides */
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f5f5f5; /* Optional: Add a background color */
+}
+
+/* Swiper slide images */
+.swiper-slide img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* Ensure images fit within the slide */
+}
+
+/* Swiper pagination */
+.swiper-pagination {
+    position: absolute;
+    bottom: 10px; /* Adjust the position of the pagination */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+/* Swiper navigation buttons */
+.swiper-button-next,
+.swiper-button-prev {
+    position: absolute;
+    top: 50%; /* Center the buttons vertically */
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.swiper-button-next {
+    right: 10px; /* Position the next button */
+}
+
+.swiper-button-prev {
+    left: 10px; /* Position the previous button */
+}
+
+/* Optional: Add hover effects for buttons */
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}

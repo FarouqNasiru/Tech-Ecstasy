@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="css/style.css">
   <!-- Firebase SDK -->
   <script type="module" src="owner-dashboard.js"></script>
-  <script type="module" src="script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/compressorjs/1.2.1/compressor.min.js"></script>
 </head>
 <body>
   <header>
@@ -21,12 +21,35 @@
   <section id="add-product-form">
     <h2>Add New Product</h2>
     <form id="product-form">
-      <input type="text" id="product-name" placeholder="Product Name" required>
-      <input type="number" id="product-price" placeholder="Price" required>
-      <input type="text" id="main-image" placeholder="Main Image URL" required>
-      <input type="file" id="additional-images" placeholder="Additional Images" multiple>
-      <textarea id="product-description" placeholder="Description" required></textarea>
-      <button type="submit">Add Product</button>
+        <input type="text" id="product-name" placeholder="Product Name" required>
+        <input type="number" id="product-price" placeholder="Price" required>
+        <input type="file" id="main-image" accept="image/*" required>
+        <input type="file" id="additional-images" placeholder="Additional Images" multiple>
+        <input type="number" id="product-quantity" placeholder="Available Quantity" required>
+        <select id="product-category" required>
+            <option value="">Select Category</option>
+            <option value="BRAND NEW PHONES">BRAND NEW PHONES</option>
+            <option value="UK USED PHONES">UK USED PHONES</option>
+            <option value="BRAND NEW LAPTOPS">BRAND NEW LAPTOPS</option>
+            <option value="UK USED LAPTOPS">UK USED LAPTOPS</option>
+            <option value="AIRPODS">AIRPODS</option>
+            <option value="KIDS TABLET">KIDS TABLET</option>
+            <option value="iPADS">iPADS</option>
+            <option value="SPECIAL OFFER GADGETS">SPECIAL OFFER GADGETS</option>
+            <option value="LAPTOP ACCESSORIES">LAPTOP ACCESSORIES</option>
+            <option value="SPEAKERS">SPEAKERS</option>
+            <option value="GAMES">GAMES</option>
+            <option value="LAPTOP REPAIR ACCESSORIES">LAPTOP REPAIR ACCESSORIES</option>
+            <option value="iWATCH">iWATCH</option>
+            <option value="INTERNET DEVICES">INTERNET DEVICES</option>
+            <option value="PHONE ACCESSORIES">PHONE ACCESSORIES</option>
+            <option value="MONITORS">MONITORS</option>
+            <option value="PRINTERS">PRINTERS</option>
+            <option value="POINT OF SALES (POS)">POINT OF SALES (POS)</option>
+            <option value="TECH ACCESSORIES">TECH ACCESSORIES</option>
+        </select>
+        <textarea id="product-description" placeholder="Description" required></textarea>
+        <button type="submit">Add Product</button>
     </form>
   </section>
 

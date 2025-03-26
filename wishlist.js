@@ -3,13 +3,13 @@ import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/
 
 // Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyBEvuijHkqXXFuV4LrpqYdcXfukPbQ6-dc",
-    authDomain: "tech-7134d.firebaseapp.com",
-    projectId: "tech-7134d",
-    storageBucket: "tech-7134d.firebasestorage.app",
-    messagingSenderId: "810449551932",
-    appId: "1:810449551932:web:75817e11e151777e76f939",
-    measurementId: "G-N5TFC3TVG8"
+  apiKey: "AIzaSyCcwOu27SDWqxPpM9z3WNdVTLKt6OyIPVQ",
+  authDomain: "tecstasy-b983f.firebaseapp.com",
+  projectId: "tecstasy-b983f",
+  storageBucket: "tecstasy-b983f.firebasestorage.app",
+  messagingSenderId: "476018649191",
+  appId: "1:476018649191:web:658266178580b03f6accc2",
+  measurementId: "G-EL41HV8PSE"
 };
 
 // Initialize Firebase
@@ -61,3 +61,4 @@ onAuthStateChanged(auth, (user) => {
     fetchWishListItems();
   }
 });
+

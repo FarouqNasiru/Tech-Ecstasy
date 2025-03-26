@@ -9,21 +9,28 @@ import {
   GoogleAuthProvider,
   onAuthStateChanged,
 } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-auth.js";
+import {
+  getFirestore,
+  doc,
+  setDoc,
+  serverTimestamp
+} from "https://www.gstatic.com/firebasejs/10.1.0/firebase-firestore.js";
 
 // Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyBEvuijHkqXXFuV4LrpqYdcXfukPbQ6-dc",
-    authDomain: "tech-7134d.firebaseapp.com",
-    projectId: "tech-7134d",
-    storageBucket: "tech-7134d.firebasestorage.app",
-    messagingSenderId: "810449551932",
-    appId: "1:810449551932:web:75817e11e151777e76f939",
-    measurementId: "G-N5TFC3TVG8"
+  apiKey: "AIzaSyCcwOu27SDWqxPpM9z3WNdVTLKt6OyIPVQ",
+  authDomain: "tecstasy-b983f.firebaseapp.com",
+  projectId: "tecstasy-b983f",
+  storageBucket: "tecstasy-b983f.firebasestorage.app",
+  messagingSenderId: "476018649191",
+  appId: "1:476018649191:web:658266178580b03f6accc2",
+  measurementId: "G-EL41HV8PSE"
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
+const db = getFirestore(app);
 
 // Enable persistence
 setPersistence(auth, browserLocalPersistence)
@@ -35,7 +42,37 @@ setPersistence(auth, browserLocalPersistence)
   });
 
 // Owner's email address
-const OWNER_EMAIL = "farouqnasiru@gmail.com"; // Replace with the owner's email
+const OWNER_EMAIL = "farouqnasiru@gmail.com";
+
+// Function to create user document in Firestore
+async function createUserDocument(user) {
+  const userRef = doc(db, "users", user.uid);
+  try {
+    await setDoc(userRef, {
+      uid: user.uid,
+      email: user.email,
+      displayName: user.displayName || '',
+      photoURL: user.photoURL || '',
+      createdAt: serverTimestamp(),
+      lastLogin: serverTimestamp(),
+      purchaseHistory: [],
+      isOwner: user.email === OWNER_EMAIL
+    }, { merge: true });
+  } catch (error) {
+    console.error("Error creating user document:", error);
+  }
+}
+
+// Common function to handle successful authentication
+async function handleSuccessfulAuth(user) {
+  await createUserDocument(user);
+  
+  if (user.email === OWNER_EMAIL) {
+    window.location.href = "owner-dashboard.html";
+  } else {
+    window.location.href = "shop.html";
+  }
+}
 
 // Handle Email/Password Login/Sign-Up
 document.getElementById("auth-form").addEventListener("submit", async (e) => {
@@ -45,30 +82,14 @@ document.getElementById("auth-form").addEventListener("submit", async (e) => {
 
   try {
     // Try to log in
-    await signInWithEmailAndPassword(auth, email, password);
-    alert("Logged in successfully!");
-
-    // Redirect based on user role
-    const user = auth.currentUser;
-    if (user.email === OWNER_EMAIL) {
-      window.location.href = "owner-dashboard.html"; // Redirect to owner's dashboard
-    } else {
-      window.location.href = "index.html"; // Redirect to the store page
-    }
+    const userCredential = await signInWithEmailAndPassword(auth, email, password);
+    await handleSuccessfulAuth(userCredential.user);
   } catch (error) {
     // If login fails, try to sign up
     if (error.code === "auth/user-not-found") {
       try {
-        await createUserWithEmailAndPassword(auth, email, password);
-        alert("Signed up successfully!");
-
-        // Redirect based on user role
-        const user = auth.currentUser;
-        if (user.email === OWNER_EMAIL) {
-          window.location.href = "owner-dashboard.html"; // Redirect to owner's dashboard
-        } else {
-          window.location.href = "index.html"; // Redirect to the store page
-        }
+        const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+        await handleSuccessfulAuth(userCredential.user);
       } catch (signUpError) {
         showError(signUpError.message);
       }
@@ -82,16 +103,8 @@ document.getElementById("auth-form").addEventListener("submit", async (e) => {
 document.getElementById("google-sign-in").addEventListener("click", async () => {
   const provider = new GoogleAuthProvider();
   try {
-    await signInWithPopup(auth, provider);
-    alert("Logged in with Google successfully!");
-
-    // Redirect based on user role
-    const user = auth.currentUser;
-    if (user.email === OWNER_EMAIL) {
-      window.location.href = "owner-dashboard.html"; // Redirect to owner's dashboard
-    } else {
-      window.location.href = "index.html"; // Redirect to the store page
-    }
+    const userCredential = await signInWithPopup(auth, provider);
+    await handleSuccessfulAuth(userCredential.user);
   } catch (error) {
     showError(error.message);
   }
@@ -103,3 +116,18 @@ function showError(message) {
   errorMessage.textContent = message;
   errorMessage.classList.remove("hidden");
 }
+
+// Check auth state on page load
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    // User is signed in, create/update their document
+    createUserDocument(user);
+    
+    // You can add additional logic here if needed
+    // For example, update lastLogin timestamp
+    const userRef = doc(db, "users", user.uid);
+    setDoc(userRef, {
+      lastLogin: serverTimestamp()
+    }, { merge: true });
+  }
+});

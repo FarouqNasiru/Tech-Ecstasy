@@ -308,9 +308,9 @@ button {
      width: 100%;
      padding: 30px 30px;
      background: transparent;
-     position: absolute;
-     z-index: 999;
-     border-top: #090102 solid 11px;
+
+     z-index: 1000;
+    
 }
 
 .logo {
@@ -921,15 +921,32 @@ ul.location_icon li a {
      width: 100%;
      margin: auto;
      margin-bottom: 150px;
+   
+ }
+
+ /* Make the search bar sticky */
+.search-bar {
+     position: sticky;
+     top: 0;
+     z-index: 999;
+     background-color: white;
+     padding: 10px;
+   
+    
+     transition: margin-top 0.3s ease; /* Smooth transition */
  }
  
+ /* Style the search input */
  .search-bar input {
      width: 100%;
      padding: 10px;
-     margin: 10px 0;
      border: 1px solid #ccc;
      border-radius: 10px;
-     margin-top: 100px;
+ }
+ 
+ /* Class to remove margin-top when scrolling */
+ .search-bar.sticky {
+     margin-top: 0;
  }
  
  .sections, .products-header {
@@ -941,7 +958,7 @@ ul.location_icon li a {
  }
  
  .section-button {
-     background-color: orange;
+     background-color: #007bff;
      border: none;
      padding: 10px;
      border-radius: 5px;
@@ -1025,59 +1042,54 @@ ul.location_icon li a {
  
 
 
- .filter-menu {
+ /* style.css */
+.filter-menu {
      position: fixed;
      top: 0;
-     z-index: 999;
-     right: -300px; /* Initially hidden */
-     width: 250px;
-     height: 100vh;
-     background-color: white;
-     box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+     right: -300px; /* Hide the menu by default */
+     width: 300px;
+     height: 100%;
+     background-color: #fff;
+     box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+     transition: right 0.3s ease;
+     z-index: 1000;
      padding: 20px;
-     transition: right 0.3s ease-in-out;
+     overflow-y: auto;
  }
  
- .filter-menu.show {
-     right: 0; /* Slide in */
+ .filter-menu.open {
+     right: 0; /* Show the menu when open */
  }
  
  .filter-menu h3 {
-     margin-bottom: 15px;
+     margin-bottom: 20px;
  }
  
  .filter-menu label {
      display: block;
-     margin: 10px 0;
+     margin-bottom: 10px;
+ }
+ 
+ .filter-menu .close-btn {
+     position: absolute;
+     top: 10px;
+     right: 10px;
+     font-size: 24px;
+     cursor: pointer;
  }
  
  .filter-menu button {
-     display: block;
-     width: 100%;
-     margin-top: 10px;
-     padding: 10px;
-     background-color: #007BFF;
+     margin-top: 20px;
+     padding: 10px 20px;
+     background-color: #4CAF50;
      color: white;
      border: none;
+     border-radius: 4px;
      cursor: pointer;
  }
  
  .filter-menu button:hover {
-     background-color: #0056b3;
- }
- 
-
- .close-btn {
-     position: absolute;
-     top: 10px;
-     right: 15px;
-     font-size: 24px;
-     cursor: pointer;
-     color: #333;
- }
- 
- .close-btn:hover {
-     color: red;
+     background-color: #45a049;
  }
 
 
@@ -1272,27 +1284,7 @@ ul.location_icon li a {
    }
    
    
-   /* Swiper Container */
-   .swiper-container {
-     width: 100%;
-     max-width: 600px;
-     margin: 0 auto;
-   }
    
-   .swiper-slide img {
-     width: 100%;
-     height: auto;
-     border-radius: 8px;
-   }
-   
-   .swiper-button-next,
-   .swiper-button-prev {
-     color: #007bff;
-   }
-   
-   .swiper-pagination-bullet-active {
-     background: #007bff;
-   }
    
    
    
@@ -1512,4 +1504,29 @@ ul.location_icon li a {
      background: #0056b3;
    }
  
+
+
+   /* style.css */
+
+/* Navbar styles */
+.navbar-nav .nav-item .nav-link {
+     color: #000; /* Set text color to black */
+     text-decoration: none; /* Remove underline */
+ }
  
+ .navbar-nav .nav-item .nav-link:hover {
+     color: #007bff; /* Change color on hover (optional) */
+ }
+ 
+ /* Ensure the active link is styled correctly */
+ .navbar-nav .nav-item.active .nav-link {
+     color: #007bff; /* Active link color */
+     font-weight: bold; /* Optional: Make active link bold */
+ }
+ 
+
+ .hell0 {
+     color: #000;
+     font-size: 12px;
+     font-weight: 500;
+ }
